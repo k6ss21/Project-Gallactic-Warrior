@@ -34,7 +34,7 @@ public class EnemeyAttack : MonoBehaviour
     IEnumerator AttackPattern(Vector2 direction)
     {
         canAttack = false;
-        
+
         GameObject obj1 = Instantiate(enemyProjectilePrefab, shootPosition.position, Quaternion.identity); // shoot first projectile
         obj1.GetComponent<EnemyProjectile>().SetDirection(direction);                                      // Set Direction of first projectile
         yield return new WaitForSeconds(.1f);                                                               //Wait for 0.1 sec
@@ -53,7 +53,7 @@ public class EnemeyAttack : MonoBehaviour
         if (other.CompareTag("PlayerProjectile"))                                   // If Player Projectile hit enemy
         {
             AudioManager.instance.PlayExplosionSFX();
-            Instantiate(explosionVfx,this.transform.position,Quaternion.identity);  //Play ExplsionVFX
+            Instantiate(explosionVfx, this.transform.position, Quaternion.identity);  //Play ExplsionVFX
             GetComponentInParent<EnemySpawner>().Cooldown();                        // Call Cool Down function for spawning next enemy
             other.gameObject.SetActive(false);
             Destroy(this.gameObject);                                               // Destroy this 

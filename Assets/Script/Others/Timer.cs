@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
     }
 
     //Update UI timer Element       
-    void DisplayTime()                              
+    void DisplayTime()
     {
         minutes = Mathf.FloorToInt(timer / 60);                                    // Convert timer to minutes.
         seconds = Mathf.FloorToInt(timer % 60);                                   // Convert timer to seconds.

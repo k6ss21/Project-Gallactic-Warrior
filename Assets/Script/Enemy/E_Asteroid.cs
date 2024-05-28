@@ -60,7 +60,8 @@ public class E_Asteroid : MonoBehaviour
 
     void DisableGameObject()
     {
+        this.gameObject.GetComponent<TrailRenderer>().enabled = false;
         this.gameObject.SetActive(false);                //Disable GameObject
-        Instantiate(explosionVfx,this.transform.position,Quaternion.identity);  //Play ExplsionVFX
+        Instantiate(explosionVfx, this.transform.position, Quaternion.identity);  //Play ExplsionVFX
     }
 }

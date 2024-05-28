@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AsteroidPooledObject : MonoBehaviour
 {
-   //Singleton Pattern
+    //Singleton Pattern
     public static AsteroidPooledObject instance;
     private List<GameObject> pooledObjects = new List<GameObject>(); //List for Pooled object
 
@@ -24,23 +24,23 @@ public class AsteroidPooledObject : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)                                     // For Loop to Instantiate  Object to List
         {
-            int randomAstroid = Random.Range(0, asteroidPrefab.Length);  
+            int randomAstroid = Random.Range(0, asteroidPrefab.Length);
             GameObject obj = Instantiate(asteroidPrefab[randomAstroid]);
             obj.SetActive(false);                                           // Disable Object 
             pooledObjects.Add(obj);                                         //Adding to pool List
         }
     }
 
-     public GameObject GetPooledObject()                            //Method to return GameObject
+    public GameObject GetPooledObject()                            //Method to return GameObject
     {
 
         for (int i = 0; i < pooledObjects.Count; i++)
         {
-            if(!pooledObjects[i].activeInHierarchy)                         // if pooled object is not active or available
+            if (!pooledObjects[i].activeInHierarchy)             // if pooled object is not active or available
             {
                 return pooledObjects[i];
             }
         }
-        return null; // else return null.
+        return null;                                            // else return null.
     }
 }

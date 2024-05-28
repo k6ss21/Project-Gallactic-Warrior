@@ -31,6 +31,13 @@ public class Economy : MonoBehaviour
         UpdateCoinTextUI();                             //Initial UI Update
     }
 
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+    }
+
     public void AddCoin(int value)                     //Method to Add coin
     {
         collectedCoins += value;

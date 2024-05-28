@@ -26,7 +26,7 @@ public class PlayerProjectilePooledObject : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)                // For Loop to Instantiate  Object to List
         {
-            GameObject obj = Instantiate(playerProjectilePrefab,transform.position,Quaternion.identity);
+            GameObject obj = Instantiate(playerProjectilePrefab, transform.position, Quaternion.identity);
             obj.SetActive(false);                       // Disable Object 
             pooledObjects.Add(obj);                     //Adding to pool List
         }
@@ -37,7 +37,7 @@ public class PlayerProjectilePooledObject : MonoBehaviour
 
         for (int i = 0; i < pooledObjects.Count; i++)
         {
-            if(!pooledObjects[i].activeInHierarchy)     // if pooled object is not active or available
+            if (!pooledObjects[i].activeInHierarchy)     // if pooled object is not active or available
             {
                 return pooledObjects[i];
             }

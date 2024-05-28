@@ -11,9 +11,8 @@ public class AsteroidSpawner : MonoBehaviour
     [Header("Projectile Settings")]
     [Space(5)]
     [SerializeField] Transform[] spawnPoints;                                   //Spawn Point
-    [SerializeField] GameObject[] asteroidProjectile;                           //Prefab of Asteriod projectile
     [SerializeField] float asteroidSpawnIntervalTime;                           //Time interval between spawn.
-    bool canSpawn = true;     
+    bool canSpawn = true;
 
 
     private void Update()
@@ -45,6 +44,7 @@ public class AsteroidSpawner : MonoBehaviour
         {
             projectile.transform.position = spawnPoints[randomSpawnPoint].position;
             projectile.SetActive(true);                                             //Enable the projectile
+            projectile.GetComponent<TrailRenderer>().enabled = true;
         }
     }
 

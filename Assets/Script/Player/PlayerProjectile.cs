@@ -17,12 +17,12 @@ public class PlayerProjectile : MonoBehaviour
         rigidbody2D.velocity = Vector2.right * speed; //Add  velocity to the projectile
     }
 
-   
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("ProjectileDestroy"))   //If projectile hit projectileDestroyCollider
+        if (other.CompareTag("ProjectileDestroy"))   //If projectile hit projectileDestroyCollider
         {
-          gameObject.SetActive(false);              // Disable the projectile (Destroy)
+            gameObject.SetActive(false);              // Disable the projectile (Destroy)
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-     [Header("Spawn Settings")]
+    [Header("Spawn Settings")]
     [Space(5)]
     [SerializeField] GameObject enemyShip;
     [SerializeField] float initialSpawnInterval;    // Initial Spawn time
@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
         {
             canSpawn = false;
             Instantiate(enemyShip, this.transform);                     // Spawn Enemy as a child
-        } 
+        }
 
 
     }
@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnCoolDown(time));
     }
 
-    public IEnumerator SpawnCoolDown(float spawnInterval )
+    public IEnumerator SpawnCoolDown(float spawnInterval)
     {
         yield return new WaitForSeconds(spawnInterval);
         canSpawn = true;
