@@ -24,10 +24,6 @@ Basic AI algorithms were Implpemented for enemy , providing challenging and unpr
 - Added Start Screen and Game End Screen.
 - Implemented Object Pooling for player projectile and asteroid projectile
 - Implemented Dynamic Asteroid  Speed.
-<<<<<<< HEAD
-- Implemented Retry feature
-=======
 - Implemented Retry feature.
->>>>>>> 7cda2de8c4d39fe4a03e86945112a57325aa4e93
 
 
