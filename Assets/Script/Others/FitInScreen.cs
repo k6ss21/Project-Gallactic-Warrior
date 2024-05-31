@@ -62,14 +62,12 @@ public class FitInScreen : MonoBehaviour
         SetAnchor();
 
     }
-
-
     private void SetAnchor()
     {
         camera = Camera.main;
         FindAnchorPoint();
-        transform.position = new Vector3(anchorPosition.x, anchorPosition.y, 0) + offset;
-    }
+        transform.position = new Vector3(anchorPosition.x, anchorPosition.y, 0) + offset; 
+    } 
 
 
 }

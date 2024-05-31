@@ -6,27 +6,26 @@ using UnityEngine;
 public class BackgroundFit : MonoBehaviour
 {
 
-   public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     float offset = 3f;
 
-    private void Start() {
+    private void Start()
+    {
         FitToScreen();
     }
 
     private void Update()
     {
-        if(Application.isPlaying) return;
+        if (Application.isPlaying) return;
         FitToScreen();
 
     }
 
     private void FitToScreen()
     {
-        float worldScreenHeight = Camera.main.orthographicSize * 2;
-        float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
-
-        Debug.Log(worldScreenHeight + ", " +Camera.main.pixelHeight);
-
-         transform.localScale = new Vector3(worldScreenWidth /spriteRenderer.sprite.bounds.size.x,worldScreenHeight / spriteRenderer.sprite.bounds.size.y , 1);
+        float worldHeight = Camera.main.orthographicSize * 2; 
+        float worldWidth = worldHeight / Screen.height * Screen.width;
+        //for scale game divide world screen width with sprite width and  divide world screen height with sprite height
+        transform.localScale = new Vector3(worldWidth / spriteRenderer.sprite.bounds.size.x, worldHeight / spriteRenderer.sprite.bounds.size.y, 1);  
     }
 }
