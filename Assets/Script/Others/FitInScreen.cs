@@ -20,6 +20,13 @@ public class FitInScreen : MonoBehaviour
         SetAnchor();
     }
 
+    private void Update()
+    {
+        if (Application.isPlaying) return;
+        SetAnchor();
+
+    }
+
     public void FindAnchorPoint()
     {
         switch (anchorPoint)
@@ -55,13 +62,7 @@ public class FitInScreen : MonoBehaviour
                 break;
         }
     }
-
-    private void Update()
-    {
-        if (Application.isPlaying) return;
-        SetAnchor();
-
-    }
+    
     private void SetAnchor()
     {
         camera = Camera.main;
