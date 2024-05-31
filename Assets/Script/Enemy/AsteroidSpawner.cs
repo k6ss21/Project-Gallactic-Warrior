@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
@@ -27,6 +28,7 @@ public class AsteroidSpawner : MonoBehaviour
             SpawnAstroid();
             canSpawn = false;
             StartCoroutine(AstroidSpawnIntervalRoutine());                      //Start coroutine for spawn interval.
+
         }
     }
 
